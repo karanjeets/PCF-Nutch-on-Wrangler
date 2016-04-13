@@ -36,19 +36,9 @@
 # skip URLs with slash-delimited segment that repeats 3+ times, to break loops
 -.*(/[^/]+)/[^/]+\1/[^/]+\1/
 
-# Blacklist for guntrader.com
-
-# Do not crawl these pages in the domain
--^http(s*)://www.ftfindustries.com/LOGN.html$
--^http(s*)://www.ftfindustries.com/ORHL.html$
--^http(s*)://www.ftfindustries.com/BASK.html$
--^http(s*)://www.ftfindustries.com/OINF.html$
-
-
 # Crawl Only these Domains
-#+^http(s*)://([a-z0-9A-Z\/\-]*).ftfindustries.com(.*)+$
-#+^http(s*)://([a-z0-9A-Z\/\-]*)ftfindustries.com(.*)+$
+#+^http(s*)://([a-z0-9A-Z\/\-]*).buyusedguns.net(.*)+$
+#+^http(s*)://([a-z0-9A-Z\/\-]*)gunchat.net(.*)+$
 
 # accept anything else
 +.
-

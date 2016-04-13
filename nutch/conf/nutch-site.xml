@@ -45,7 +45,7 @@
 
 <property>
   <name>http.robot.rules.whitelist</name>
-  <value>*.backpage.com,*.impactguns.com,*.nationalguntrader.com,*.shooterswap.com,*.slickguns.com,*.shooting.org,*.gunbroker.com,*.accurateshooter.com,*.armslist.com,*.buyusedguns.net,*.cabelas.com,*.cheaperthandirt.com,*.davidsonsinc.com,*.freegunclassifieds.com,*.gunauction.com,*.compraventadearmas.com,*.dallasguns.com,*.elpasoguntrader.com,*.floridagunclassifieds.com,*.iguntrade.com,*.montanagunsforsale.com,*.msguntrader.com,*.sanjoseguntrader.com,*.tennesseegunexchange.com</value>
+  <value>*.ftfindustries.com</value>
   <description>Comma separated list of hostnames or IP addresses to ignore 
   robot rules parsing for. Use with care and only if you are explicitly
   allowed by the site owner to ignore the site's robots.txt!
@@ -106,7 +106,7 @@
 
 <property>
   <name>http.redirect.max</name>
-  <value>3</value>
+  <value>4</value>
   <description>The maximum number of redirects the fetcher will follow when
   trying to fetch a page. If set to negative or 0, fetcher won't immediately
   follow redirected URLs, instead it will record them for later fetching.
@@ -204,11 +204,21 @@
   </description>
 </property>
 
+<property>
+  <name>db.ignore.external.links</name>
+  <value>true</value> <!-- Changed from false -->
+  <description>If true, outlinks leading from a page to external hosts or domain
+  will be ignored. This is an effective way to limit the crawl to include
+  only initially injected hosts, without creating complex URLFilters.
+  See 'db.ignore.external.links.mode'.
+  </description>
+</property>
+
 <!-- generate properties -->
 
 <property>
   <name>generate.max.count</name>
-  <value>50000</value>
+  <value>1000</value>
   <description>The maximum number of urls in a single
   fetchlist.  -1 if unlimited. The urls are counted according
   to the value of the parameter generator.count.mode.
@@ -324,7 +334,7 @@
 
 <property>
   <name>fetcher.follow.outlinks.ignore.external</name>
-  <value>true</value> <!-- Changed from false --> 
+  <value>false</value> <!-- Changed to default true --> 
   <description>Whether to ignore or follow external links. Set db.ignore.external.links to false and this to true to store outlinks
   in the output but not follow them. If db.ignore.external.links is true this directive is ignored.
   </description>
@@ -332,7 +342,7 @@
 
 <property>
   <name>plugin.includes</name>
-  <value>protocol-http|protocol-httpclient|urlfilter-regex|parse-(html|tika)|index-(basic|anchor)|indexer-solr|scoring-similarity|urlnormalizer-(pass|regex|basic)</value>
+  <value>protocol-http|protocol-httpclient|urlfilter-(regex|ignoreexempt)|parse-(html|tika)|index-(basic|anchor)|indexer-solr|urlnormalizer-(pass|regex|basic)</value>
   <description>Regular expression naming plugin directory names to
   include.  Any plugin not matching this expression is excluded.
   In any case you need at least include the nutch-extensionpoints plugin. By
@@ -403,91 +413,21 @@
   <description>Comma separated list of headings to retrieve from the document</description>
 </property>
 
+<!-- HtmlUnit Configuration -->
 <property>
-  <name>selenium.driver</name>
-  <value>remote</value>
+  <name>page.load.delay</name>
+  <value>6</value>
   <description>
-    A String value representing the flavour of Selenium 
-    WebDriver() to use. Currently the following options
-    exist - 'firefox', 'chrome', 'safari', 'opera' and 'remote'.
-    If 'remote' is used it is essential to also set correct properties for
-    'selenium.hub.port', 'selenium.hub.path', 'selenium.hub.host',
-    'selenium.hub.protocol', 'selenium.grid.driver' and 'selenium.grid.binary'.
+    The delay in seconds to use when loading a page with htmlunit or selenium.
   </description>
 </property>
 
 <property>
-  <name>selenium.take.screenshot</name>
+  <name>htmlunit.enable.javascript</name>
   <value>false</value>
   <description>
-    Boolean property determining whether the protocol-selenium
-    WebDriver should capture a screenshot of the URL. If set to
-    true remember to define the 'selenium.screenshot.location' 
-    property as this determines the location screenshots should be 
-    persisted to on HDFS. If that property is not set, screenshots
-    are simply discarded.
-  </description>
-</property>
-
-<property>
-  <name>selenium.screenshot.location</name>
-  <value></value>
-  <description>
-    The location on disk where a URL screenshot should be saved
-    to if the 'selenium.take.screenshot' proerty is set to true.
-    By default this is null, in this case screenshots held in memory
-    are simply discarded.
-  </description>
-</property>
-
-<property>
-  <name>selenium.hub.port</name>
-  <value>4444</value>
-  <description>Selenium Hub Location connection port</description>
-</property>
-
-<property>
-  <name>selenium.hub.path</name>
-  <value>/wd/hub</value>
-  <description>Selenium Hub Location connection path</description>
-</property>
-
-<property>
-  <name>selenium.hub.host</name>
-  <value>localhost</value>
-  <description>Selenium Hub Location connection host</description>
-</property>
-
-<property>
-  <name>selenium.hub.protocol</name>
-  <value>http</value>
-  <description>Selenium Hub Location connection protocol</description>
-</property>
-
-<property>
-  <name>selenium.grid.driver</name>
-  <value>firefox</value>
-  <description>A String value representing the flavour of Selenium 
-    WebDriver() used on the selenium grid. Currently the following options
-    exist - 'firefox' </description>
-</property>
-
-<property>
-  <name>selenium.grid.binary</name>
-  <value></value>
-  <description>A String value representing the path to the browser binary 
-    location for each node
- </description>
-</property>
-
-<!-- protocol-interactiveselenium configuration -->
-<property>
-  <name>interactiveselenium.handlers</name>
-  <value>NavigationHandler</value>
-  <description>
-    A comma separated list of Selenium handlers that should be run for a given
-    URL. The DefaultHandler causes the same functionality as protocol-selenium.
-    Custom handlers can be implemented in the plugin package and included here.
+    A Boolean value representing if javascript should
+    be enabled or disabled when using htmlunit. The default value is enabled.
   </description>
 </property>
 
@@ -499,16 +439,6 @@
   <description>Boolean value for whether we should skip parsing for truncated documents. By default this
   property is activated due to extremely high levels of CPU which parsing can sometimes take.
   </description>
-</property>
-
-<property>
-	<name>cosine.goldstandard.file</name>
-	<value>goldstandard.txt</value>
-</property>
-
-<property>
-  <name>scoring.similarity.stopword.file</name>
-  <value>stopwords.txt</value>
 </property>
 
 </configuration>
