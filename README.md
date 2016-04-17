@@ -1,2 +1,2 @@
 # crawl-evaluation
-A repository for Nutch crawl evaluation
+A crawl evaluation of Apache Nutch. This repository contains all the configurations and scripts used for evaluation.
