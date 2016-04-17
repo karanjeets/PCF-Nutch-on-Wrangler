@@ -26,4 +26,8 @@ CRAWLER="Apache-Nutch"
 OUT_JSON="output.json"
 
 ${NUTCH_PATH} commoncrawldump -segment "$CRAWL_PATH"/segments/$SEGMENT -outputDir "$OUTPUTDIR"/$SEGMENT
-#/usr/bin/python memex_cca_esindex.py -t $TEAM -c $CRAWLER -d "$OUTPUTDIR"/"$SEGMENT"/ -p OUT_JSON
+
+
+THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+python "$THIS_DIR/../../scripts/memex_cca_esindex.py -t $TEAM -c $CRAWLER -d "$OUTPUTDIR"/"$SEGMENT"/ -p OUT_JSON  -i Weapons -o Weapons
+
