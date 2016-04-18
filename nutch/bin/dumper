@@ -16,19 +16,22 @@
 # limitations under the License.
 #
 
-NUTCH_PATH="$1"
+BIN_PATH="$1"
 CRAWL_PATH="$2"
 OUTPUTDIR="$3"
 SEGMENT="$4"
 
+# Configuration
 TEAM="NASAJPL"
 CRAWLER="Apache-Nutch"
-OUT_JSON="output.json"
+OUT_SEGMENT="${OUTPUTDIR}/ccd/${SEGMENT}"
+OUT_JSON="${OUTPUTDIR}/json/${SEGMENT}.json"
 STORE_PREFIX="http://imagecat.dyndns.org/weapons/alldata/"
 
-${NUTCH_PATH} commoncrawldump -segment "$CRAWL_PATH"/segments/$SEGMENT -outputDir "$OUTPUTDIR"/$SEGMENT
+# Common Crawl Dump
+echo ${BIN_PATH}/nutch commoncrawldump -segment "$CRAWL_PATH"/segments/$SEGMENT -outputDir $OUT_SEGMENT
+${BIN_PATH}/nutch commoncrawldump -segment "$CRAWL_PATH"/segments/$SEGMENT -outputDir $OUT_SEGMENT
 
-
-THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-python "$THIS_DIR/../../scripts/memex_cca_esindex.py" -t $TEAM -c $CRAWLER -d "$OUTPUTDIR"/"$SEGMENT"/ -p OUT_JSON  -i Weapons -o Weapons -s "$STORE_PREFIX"
-
+# CDRv2 conversion and exporting to JSON
+echo /usr/bin/python ${BIN_PATH}/memex_cca_esindex.py -t $TEAM -c $CRAWLER -d "${OUT_SEGMENT}/" -p $OUT_JSON  -i Weapons -o Weapons -s "$STORE_PREFIX"
+python ${BIN_PATH}/memex_cca_esindex.py -t $TEAM -c $CRAWLER -d "${OUT_SEGMENT}/" -p $OUT_JSON  -i Weapons -o Weapons -s "$STORE_PREFIX"
