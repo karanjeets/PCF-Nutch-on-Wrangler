@@ -33,5 +33,5 @@
 
 # allow only documents with a text/html mimetype
 text/*
-
+application/*
 image/*

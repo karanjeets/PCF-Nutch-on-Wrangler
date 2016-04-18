@@ -242,7 +242,7 @@
 
 <property>
   <name>fetcher.server.min.delay</name>
-  <value>0.2</value> <!-- Changed from 6.0 -->
+  <value>0.5</value> <!-- Changed from 6.0 -->
   <description>The minimum number of seconds the fetcher will delay between 
   successive requests to the same server. This value is applicable ONLY
   if fetcher.threads.per.queue is greater than 1 (i.e. the host blocking

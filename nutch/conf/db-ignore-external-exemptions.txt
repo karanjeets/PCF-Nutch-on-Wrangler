@@ -30,4 +30,4 @@
 # Example 1:
 #----------
 # To exempt urls ending with image extensions, uncomment the below line
-+(?i)\.(jpg|png|gif|jpeg|bmp)$
++(?i)\.(jpg|png|svg|gif|jpeg|bmp|pdf|xls|doc|xlsx|docx|txt|ppt|mp4|avi|mp3|wav|flv|vob|wmv|mpeg)$
