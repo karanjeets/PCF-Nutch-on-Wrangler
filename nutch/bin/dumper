@@ -24,10 +24,11 @@ SEGMENT="$4"
 TEAM="NASAJPL"
 CRAWLER="Apache-Nutch"
 OUT_JSON="output.json"
+STORE_PREFIX="http://imagecat.dyndns.org/weapons/alldata/"
 
 ${NUTCH_PATH} commoncrawldump -segment "$CRAWL_PATH"/segments/$SEGMENT -outputDir "$OUTPUTDIR"/$SEGMENT
 
 
 THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-python "$THIS_DIR/../../scripts/memex_cca_esindex.py -t $TEAM -c $CRAWLER -d "$OUTPUTDIR"/"$SEGMENT"/ -p OUT_JSON  -i Weapons -o Weapons
+python "$THIS_DIR/../../scripts/memex_cca_esindex.py" -t $TEAM -c $CRAWLER -d "$OUTPUTDIR"/"$SEGMENT"/ -p OUT_JSON  -i Weapons -o Weapons -s "$STORE_PREFIX"
 
