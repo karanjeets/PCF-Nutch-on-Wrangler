@@ -53,7 +53,7 @@ def split(infile, outfiles):
                             pgroup = get_groupname(p)
                             if pgroup in outfiles:
                                 bucket = outfiles[pgroup]  # parents bucket
-                                stats[pgroup] = stats.get(group, 0) + 1
+                                stats[pgroup] = stats.get(pgroup, 0) + 1
                                 break
                 bucket.write(json.dumps(doc))
                 bucket.write("\n")
