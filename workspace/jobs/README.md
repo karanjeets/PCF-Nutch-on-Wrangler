@@ -4,7 +4,7 @@ This space is reserved for the TACC Wrangler jobs (to be run in Hadoop or Local 
 
 Please refer to the sample SLURM scripts for details on the headers and format. Here are few things to keep in mind.
 
-* It is a good practice to use **.slurm** extension of the job file.
+* It is a good practice to use **.slurm** extension for the job file.
 * **sinfo -o "%20P %5a %.10l %16F"** - Lists the availability and status of queues. The output contains a header (A/I/O/T) for the *NODES* which means:
     * **A**: Allocated Nodes
     * **I**: Idle Nodes
