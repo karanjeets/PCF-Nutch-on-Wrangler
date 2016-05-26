@@ -4,13 +4,14 @@ A crawl evaluation of Apache Nutch v1.12. We are running our crawls on [TACC Wra
 
 We are evaluating Nutch on all kind of challenging stuff - Broad crawling, Focused crawling, Intelligent Crawling, Domain Discovery and many more...
 
-The project has a sample crawling workspace for Wrangler which is both automated and portable. More details can be found from the respective README files.
+The project has a sample crawling workspace named Portable Crawling Framework (PCF) for Wrangler which is both automated and portable. More details can be found from the respective README files.
 
 #### Quick Links
 
 * [Seeds](workspace/seeds/)
 * [Wrangler Jobs](workspace/jobs/)
 * [Crawling](workspace/crawling/)
+* [Kafka](workspace/kafka/)
 * [Logs](workspace/logs/)
 * [Nutch-Config](workspace/nutch-config/)
 * [Scripts](workspace/scripts/)
