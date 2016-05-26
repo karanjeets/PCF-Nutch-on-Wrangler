@@ -1,0 +1,468 @@
+[2016-05-25 22:45:38,580] INFO KafkaConfig values: 
+	request.timeout.ms = 30000
+	log.roll.hours = 168
+	inter.broker.protocol.version = 0.9.0.X
+	log.preallocate = false
+	security.inter.broker.protocol = PLAINTEXT
+	controller.socket.timeout.ms = 30000
+	ssl.keymanager.algorithm = SunX509
+	ssl.key.password = null
+	log.cleaner.enable = false
+	ssl.provider = null
+	num.recovery.threads.per.data.dir = 1
+	background.threads = 10
+	unclean.leader.election.enable = true
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	replica.lag.time.max.ms = 10000
+	ssl.endpoint.identification.algorithm = null
+	auto.create.topics.enable = true
+	zookeeper.sync.time.ms = 2000
+	ssl.client.auth = none
+	ssl.keystore.password = null
+	log.cleaner.io.buffer.load.factor = 0.9
+	offsets.topic.compression.codec = 0
+	log.retention.hours = 168
+	log.dirs = /tmp/kafka-logs
+	ssl.protocol = TLS
+	log.index.size.max.bytes = 10485760
+	sasl.kerberos.min.time.before.relogin = 60000
+	log.retention.minutes = null
+	connections.max.idle.ms = 600000
+	ssl.trustmanager.algorithm = PKIX
+	offsets.retention.minutes = 1440
+	max.connections.per.ip = 2147483647
+	replica.fetch.wait.max.ms = 500
+	metrics.num.samples = 2
+	port = 9092
+	offsets.retention.check.interval.ms = 600000
+	log.cleaner.dedupe.buffer.size = 524288000
+	log.segment.bytes = 1073741824
+	group.min.session.timeout.ms = 6000
+	producer.purgatory.purge.interval.requests = 1000
+	min.insync.replicas = 1
+	ssl.truststore.password = null
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	socket.receive.buffer.bytes = 102400
+	leader.imbalance.per.broker.percentage = 10
+	num.io.threads = 8
+	zookeeper.connect = ${PCF_KAFKA_HOST}:2181
+	queued.max.requests = 500
+	offsets.topic.replication.factor = 3
+	replica.socket.timeout.ms = 30000
+	offsets.topic.segment.bytes = 104857600
+	replica.high.watermark.checkpoint.interval.ms = 5000
+	broker.id = 0
+	ssl.keystore.location = null
+	listeners = PLAINTEXT://:9092
+	log.flush.interval.messages = 9223372036854775807
+	principal.builder.class = class org.apache.kafka.common.security.auth.DefaultPrincipalBuilder
+	log.retention.ms = null
+	offsets.commit.required.acks = -1
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	group.max.session.timeout.ms = 30000
+	num.replica.fetchers = 1
+	advertised.listeners = null
+	replica.socket.receive.buffer.bytes = 65536
+	delete.topic.enable = false
+	log.index.interval.bytes = 4096
+	metric.reporters = []
+	compression.type = producer
+	log.cleanup.policy = delete
+	controlled.shutdown.max.retries = 3
+	log.cleaner.threads = 1
+	quota.window.size.seconds = 1
+	zookeeper.connection.timeout.ms = 6000
+	offsets.load.buffer.size = 5242880
+	zookeeper.session.timeout.ms = 6000
+	ssl.cipher.suites = null
+	authorizer.class.name = 
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.service.name = null
+	controlled.shutdown.enable = true
+	offsets.topic.num.partitions = 50
+	quota.window.num = 11
+	message.max.bytes = 1000012
+	log.cleaner.backoff.ms = 15000
+	log.roll.jitter.hours = 0
+	log.retention.check.interval.ms = 300000
+	replica.fetch.max.bytes = 1048576
+	log.cleaner.delete.retention.ms = 86400000
+	fetch.purgatory.purge.interval.requests = 1000
+	log.cleaner.min.cleanable.ratio = 0.5
+	offsets.commit.timeout.ms = 5000
+	zookeeper.set.acl = false
+	log.retention.bytes = -1
+	offset.metadata.max.bytes = 4096
+	leader.imbalance.check.interval.seconds = 300
+	quota.consumer.default = 9223372036854775807
+	log.roll.jitter.ms = null
+	reserved.broker.max.id = 1000
+	replica.fetch.backoff.ms = 1000
+	advertised.host.name = null
+	quota.producer.default = 9223372036854775807
+	log.cleaner.io.buffer.size = 524288
+	controlled.shutdown.retry.backoff.ms = 5000
+	log.dir = /tmp/kafka-logs
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.segment.delete.delay.ms = 60000
+	num.partitions = 1
+	num.network.threads = 3
+	socket.request.max.bytes = 104857600
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	log.roll.ms = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	socket.send.buffer.bytes = 102400
+	log.flush.interval.ms = null
+	ssl.truststore.location = null
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	default.replication.factor = 1
+	metrics.sample.window.ms = 30000
+	auto.leader.rebalance.enable = true
+	host.name = 
+	ssl.truststore.type = JKS
+	advertised.port = null
+	max.connections.per.ip.overrides = 
+	replica.fetch.min.bytes = 1
+	ssl.keystore.type = JKS
+ (kafka.server.KafkaConfig)
+[2016-05-25 22:45:38,726] INFO starting (kafka.server.KafkaServer)
+[2016-05-25 22:45:38,733] INFO Connecting to zookeeper on ${PCF_KAFKA_HOST}:2181 (kafka.server.KafkaServer)
+[2016-05-25 22:45:45,139] FATAL Fatal error during KafkaServer startup. Prepare to shutdown (kafka.server.KafkaServer)
+org.I0Itec.zkclient.exception.ZkTimeoutException: Unable to connect to zookeeper server within timeout: 6000
+	at org.I0Itec.zkclient.ZkClient.connect(ZkClient.java:1223)
+	at org.I0Itec.zkclient.ZkClient.<init>(ZkClient.java:155)
+	at org.I0Itec.zkclient.ZkClient.<init>(ZkClient.java:129)
+	at kafka.utils.ZkUtils$.createZkClientAndConnection(ZkUtils.scala:89)
+	at kafka.utils.ZkUtils$.apply(ZkUtils.scala:71)
+	at kafka.server.KafkaServer.initZk(KafkaServer.scala:278)
+	at kafka.server.KafkaServer.startup(KafkaServer.scala:168)
+	at kafka.server.KafkaServerStartable.startup(KafkaServerStartable.scala:37)
+	at kafka.Kafka$.main(Kafka.scala:67)
+	at kafka.Kafka.main(Kafka.scala)
+[2016-05-25 22:45:45,142] INFO shutting down (kafka.server.KafkaServer)
+[2016-05-25 22:45:45,148] INFO shut down completed (kafka.server.KafkaServer)
+[2016-05-25 22:45:45,149] FATAL Fatal error during KafkaServerStartable startup. Prepare to shutdown (kafka.server.KafkaServerStartable)
+org.I0Itec.zkclient.exception.ZkTimeoutException: Unable to connect to zookeeper server within timeout: 6000
+	at org.I0Itec.zkclient.ZkClient.connect(ZkClient.java:1223)
+	at org.I0Itec.zkclient.ZkClient.<init>(ZkClient.java:155)
+	at org.I0Itec.zkclient.ZkClient.<init>(ZkClient.java:129)
+	at kafka.utils.ZkUtils$.createZkClientAndConnection(ZkUtils.scala:89)
+	at kafka.utils.ZkUtils$.apply(ZkUtils.scala:71)
+	at kafka.server.KafkaServer.initZk(KafkaServer.scala:278)
+	at kafka.server.KafkaServer.startup(KafkaServer.scala:168)
+	at kafka.server.KafkaServerStartable.startup(KafkaServerStartable.scala:37)
+	at kafka.Kafka$.main(Kafka.scala:67)
+	at kafka.Kafka.main(Kafka.scala)
+[2016-05-25 22:45:45,150] INFO shutting down (kafka.server.KafkaServer)
+[2016-05-25 22:51:41,231] INFO KafkaConfig values: 
+	request.timeout.ms = 30000
+	log.roll.hours = 168
+	inter.broker.protocol.version = 0.9.0.X
+	log.preallocate = false
+	security.inter.broker.protocol = PLAINTEXT
+	controller.socket.timeout.ms = 30000
+	ssl.keymanager.algorithm = SunX509
+	ssl.key.password = null
+	log.cleaner.enable = false
+	ssl.provider = null
+	num.recovery.threads.per.data.dir = 1
+	background.threads = 10
+	unclean.leader.election.enable = true
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	replica.lag.time.max.ms = 10000
+	ssl.endpoint.identification.algorithm = null
+	auto.create.topics.enable = true
+	zookeeper.sync.time.ms = 2000
+	ssl.client.auth = none
+	ssl.keystore.password = null
+	log.cleaner.io.buffer.load.factor = 0.9
+	offsets.topic.compression.codec = 0
+	log.retention.hours = 168
+	log.dirs = /tmp/kafka-logs
+	ssl.protocol = TLS
+	log.index.size.max.bytes = 10485760
+	sasl.kerberos.min.time.before.relogin = 60000
+	log.retention.minutes = null
+	connections.max.idle.ms = 600000
+	ssl.trustmanager.algorithm = PKIX
+	offsets.retention.minutes = 1440
+	max.connections.per.ip = 2147483647
+	replica.fetch.wait.max.ms = 500
+	metrics.num.samples = 2
+	port = 9092
+	offsets.retention.check.interval.ms = 600000
+	log.cleaner.dedupe.buffer.size = 524288000
+	log.segment.bytes = 1073741824
+	group.min.session.timeout.ms = 6000
+	producer.purgatory.purge.interval.requests = 1000
+	min.insync.replicas = 1
+	ssl.truststore.password = null
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	socket.receive.buffer.bytes = 102400
+	leader.imbalance.per.broker.percentage = 10
+	num.io.threads = 8
+	zookeeper.connect = ${PCF_KAFKA_HOST}:2181
+	queued.max.requests = 500
+	offsets.topic.replication.factor = 3
+	replica.socket.timeout.ms = 30000
+	offsets.topic.segment.bytes = 104857600
+	replica.high.watermark.checkpoint.interval.ms = 5000
+	broker.id = 0
+	ssl.keystore.location = null
+	listeners = PLAINTEXT://:9092
+	log.flush.interval.messages = 9223372036854775807
+	principal.builder.class = class org.apache.kafka.common.security.auth.DefaultPrincipalBuilder
+	log.retention.ms = null
+	offsets.commit.required.acks = -1
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	group.max.session.timeout.ms = 30000
+	num.replica.fetchers = 1
+	advertised.listeners = null
+	replica.socket.receive.buffer.bytes = 65536
+	delete.topic.enable = false
+	log.index.interval.bytes = 4096
+	metric.reporters = []
+	compression.type = producer
+	log.cleanup.policy = delete
+	controlled.shutdown.max.retries = 3
+	log.cleaner.threads = 1
+	quota.window.size.seconds = 1
+	zookeeper.connection.timeout.ms = 6000
+	offsets.load.buffer.size = 5242880
+	zookeeper.session.timeout.ms = 6000
+	ssl.cipher.suites = null
+	authorizer.class.name = 
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.service.name = null
+	controlled.shutdown.enable = true
+	offsets.topic.num.partitions = 50
+	quota.window.num = 11
+	message.max.bytes = 1000012
+	log.cleaner.backoff.ms = 15000
+	log.roll.jitter.hours = 0
+	log.retention.check.interval.ms = 300000
+	replica.fetch.max.bytes = 1048576
+	log.cleaner.delete.retention.ms = 86400000
+	fetch.purgatory.purge.interval.requests = 1000
+	log.cleaner.min.cleanable.ratio = 0.5
+	offsets.commit.timeout.ms = 5000
+	zookeeper.set.acl = false
+	log.retention.bytes = -1
+	offset.metadata.max.bytes = 4096
+	leader.imbalance.check.interval.seconds = 300
+	quota.consumer.default = 9223372036854775807
+	log.roll.jitter.ms = null
+	reserved.broker.max.id = 1000
+	replica.fetch.backoff.ms = 1000
+	advertised.host.name = null
+	quota.producer.default = 9223372036854775807
+	log.cleaner.io.buffer.size = 524288
+	controlled.shutdown.retry.backoff.ms = 5000
+	log.dir = /tmp/kafka-logs
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.segment.delete.delay.ms = 60000
+	num.partitions = 1
+	num.network.threads = 3
+	socket.request.max.bytes = 104857600
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	log.roll.ms = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	socket.send.buffer.bytes = 102400
+	log.flush.interval.ms = null
+	ssl.truststore.location = null
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	default.replication.factor = 1
+	metrics.sample.window.ms = 30000
+	auto.leader.rebalance.enable = true
+	host.name = 
+	ssl.truststore.type = JKS
+	advertised.port = null
+	max.connections.per.ip.overrides = 
+	replica.fetch.min.bytes = 1
+	ssl.keystore.type = JKS
+ (kafka.server.KafkaConfig)
+[2016-05-25 22:51:41,344] INFO starting (kafka.server.KafkaServer)
+[2016-05-25 22:51:41,349] INFO Connecting to zookeeper on ${PCF_KAFKA_HOST}:2181 (kafka.server.KafkaServer)
+[2016-05-25 22:51:47,758] FATAL Fatal error during KafkaServer startup. Prepare to shutdown (kafka.server.KafkaServer)
+org.I0Itec.zkclient.exception.ZkTimeoutException: Unable to connect to zookeeper server within timeout: 6000
+	at org.I0Itec.zkclient.ZkClient.connect(ZkClient.java:1223)
+	at org.I0Itec.zkclient.ZkClient.<init>(ZkClient.java:155)
+	at org.I0Itec.zkclient.ZkClient.<init>(ZkClient.java:129)
+	at kafka.utils.ZkUtils$.createZkClientAndConnection(ZkUtils.scala:89)
+	at kafka.utils.ZkUtils$.apply(ZkUtils.scala:71)
+	at kafka.server.KafkaServer.initZk(KafkaServer.scala:278)
+	at kafka.server.KafkaServer.startup(KafkaServer.scala:168)
+	at kafka.server.KafkaServerStartable.startup(KafkaServerStartable.scala:37)
+	at kafka.Kafka$.main(Kafka.scala:67)
+	at kafka.Kafka.main(Kafka.scala)
+[2016-05-25 22:51:47,760] INFO shutting down (kafka.server.KafkaServer)
+[2016-05-25 22:51:47,764] INFO shut down completed (kafka.server.KafkaServer)
+[2016-05-25 22:51:47,765] FATAL Fatal error during KafkaServerStartable startup. Prepare to shutdown (kafka.server.KafkaServerStartable)
+org.I0Itec.zkclient.exception.ZkTimeoutException: Unable to connect to zookeeper server within timeout: 6000
+	at org.I0Itec.zkclient.ZkClient.connect(ZkClient.java:1223)
+	at org.I0Itec.zkclient.ZkClient.<init>(ZkClient.java:155)
+	at org.I0Itec.zkclient.ZkClient.<init>(ZkClient.java:129)
+	at kafka.utils.ZkUtils$.createZkClientAndConnection(ZkUtils.scala:89)
+	at kafka.utils.ZkUtils$.apply(ZkUtils.scala:71)
+	at kafka.server.KafkaServer.initZk(KafkaServer.scala:278)
+	at kafka.server.KafkaServer.startup(KafkaServer.scala:168)
+	at kafka.server.KafkaServerStartable.startup(KafkaServerStartable.scala:37)
+	at kafka.Kafka$.main(Kafka.scala:67)
+	at kafka.Kafka.main(Kafka.scala)
+[2016-05-25 22:51:47,766] INFO shutting down (kafka.server.KafkaServer)
+[2016-05-25 22:58:02,788] INFO KafkaConfig values: 
+	request.timeout.ms = 30000
+	log.roll.hours = 168
+	inter.broker.protocol.version = 0.9.0.X
+	log.preallocate = false
+	security.inter.broker.protocol = PLAINTEXT
+	controller.socket.timeout.ms = 30000
+	ssl.keymanager.algorithm = SunX509
+	ssl.key.password = null
+	log.cleaner.enable = false
+	ssl.provider = null
+	num.recovery.threads.per.data.dir = 1
+	background.threads = 10
+	unclean.leader.election.enable = true
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	replica.lag.time.max.ms = 10000
+	ssl.endpoint.identification.algorithm = null
+	auto.create.topics.enable = true
+	zookeeper.sync.time.ms = 2000
+	ssl.client.auth = none
+	ssl.keystore.password = null
+	log.cleaner.io.buffer.load.factor = 0.9
+	offsets.topic.compression.codec = 0
+	log.retention.hours = 168
+	log.dirs = /tmp/kafka-logs
+	ssl.protocol = TLS
+	log.index.size.max.bytes = 10485760
+	sasl.kerberos.min.time.before.relogin = 60000
+	log.retention.minutes = null
+	connections.max.idle.ms = 600000
+	ssl.trustmanager.algorithm = PKIX
+	offsets.retention.minutes = 1440
+	max.connections.per.ip = 2147483647
+	replica.fetch.wait.max.ms = 500
+	metrics.num.samples = 2
+	port = 9092
+	offsets.retention.check.interval.ms = 600000
+	log.cleaner.dedupe.buffer.size = 524288000
+	log.segment.bytes = 1073741824
+	group.min.session.timeout.ms = 6000
+	producer.purgatory.purge.interval.requests = 1000
+	min.insync.replicas = 1
+	ssl.truststore.password = null
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	socket.receive.buffer.bytes = 102400
+	leader.imbalance.per.broker.percentage = 10
+	num.io.threads = 8
+	zookeeper.connect = ${PCF_KAFKA_HOST}:2181
+	queued.max.requests = 500
+	offsets.topic.replication.factor = 3
+	replica.socket.timeout.ms = 30000
+	offsets.topic.segment.bytes = 104857600
+	replica.high.watermark.checkpoint.interval.ms = 5000
+	broker.id = 0
+	ssl.keystore.location = null
+	listeners = PLAINTEXT://:9092
+	log.flush.interval.messages = 9223372036854775807
+	principal.builder.class = class org.apache.kafka.common.security.auth.DefaultPrincipalBuilder
+	log.retention.ms = null
+	offsets.commit.required.acks = -1
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	group.max.session.timeout.ms = 30000
+	num.replica.fetchers = 1
+	advertised.listeners = null
+	replica.socket.receive.buffer.bytes = 65536
+	delete.topic.enable = false
+	log.index.interval.bytes = 4096
+	metric.reporters = []
+	compression.type = producer
+	log.cleanup.policy = delete
+	controlled.shutdown.max.retries = 3
+	log.cleaner.threads = 1
+	quota.window.size.seconds = 1
+	zookeeper.connection.timeout.ms = 6000
+	offsets.load.buffer.size = 5242880
+	zookeeper.session.timeout.ms = 6000
+	ssl.cipher.suites = null
+	authorizer.class.name = 
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.service.name = null
+	controlled.shutdown.enable = true
+	offsets.topic.num.partitions = 50
+	quota.window.num = 11
+	message.max.bytes = 1000012
+	log.cleaner.backoff.ms = 15000
+	log.roll.jitter.hours = 0
+	log.retention.check.interval.ms = 300000
+	replica.fetch.max.bytes = 1048576
+	log.cleaner.delete.retention.ms = 86400000
+	fetch.purgatory.purge.interval.requests = 1000
+	log.cleaner.min.cleanable.ratio = 0.5
+	offsets.commit.timeout.ms = 5000
+	zookeeper.set.acl = false
+	log.retention.bytes = -1
+	offset.metadata.max.bytes = 4096
+	leader.imbalance.check.interval.seconds = 300
+	quota.consumer.default = 9223372036854775807
+	log.roll.jitter.ms = null
+	reserved.broker.max.id = 1000
+	replica.fetch.backoff.ms = 1000
+	advertised.host.name = null
+	quota.producer.default = 9223372036854775807
+	log.cleaner.io.buffer.size = 524288
+	controlled.shutdown.retry.backoff.ms = 5000
+	log.dir = /tmp/kafka-logs
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.segment.delete.delay.ms = 60000
+	num.partitions = 1
+	num.network.threads = 3
+	socket.request.max.bytes = 104857600
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	log.roll.ms = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	socket.send.buffer.bytes = 102400
+	log.flush.interval.ms = null
+	ssl.truststore.location = null
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	default.replication.factor = 1
+	metrics.sample.window.ms = 30000
+	auto.leader.rebalance.enable = true
+	host.name = 
+	ssl.truststore.type = JKS
+	advertised.port = null
+	max.connections.per.ip.overrides = 
+	replica.fetch.min.bytes = 1
+	ssl.keystore.type = JKS
+ (kafka.server.KafkaConfig)
+[2016-05-25 22:58:02,910] INFO starting (kafka.server.KafkaServer)
+[2016-05-25 22:58:02,917] INFO Connecting to zookeeper on ${PCF_KAFKA_HOST}:2181 (kafka.server.KafkaServer)
+[2016-05-25 22:58:09,334] FATAL Fatal error during KafkaServer startup. Prepare to shutdown (kafka.server.KafkaServer)
+org.I0Itec.zkclient.exception.ZkTimeoutException: Unable to connect to zookeeper server within timeout: 6000
+	at org.I0Itec.zkclient.ZkClient.connect(ZkClient.java:1223)
+	at org.I0Itec.zkclient.ZkClient.<init>(ZkClient.java:155)
+	at org.I0Itec.zkclient.ZkClient.<init>(ZkClient.java:129)
+	at kafka.utils.ZkUtils$.createZkClientAndConnection(ZkUtils.scala:89)
+	at kafka.utils.ZkUtils$.apply(ZkUtils.scala:71)
+	at kafka.server.KafkaServer.initZk(KafkaServer.scala:278)
+	at kafka.server.KafkaServer.startup(KafkaServer.scala:168)
+	at kafka.server.KafkaServerStartable.startup(KafkaServerStartable.scala:37)
+	at kafka.Kafka$.main(Kafka.scala:67)
+	at kafka.Kafka.main(Kafka.scala)
+[2016-05-25 22:58:09,337] INFO shutting down (kafka.server.KafkaServer)
+[2016-05-25 22:58:09,341] INFO shut down completed (kafka.server.KafkaServer)
+[2016-05-25 22:58:09,342] FATAL Fatal error during KafkaServerStartable startup. Prepare to shutdown (kafka.server.KafkaServerStartable)
+org.I0Itec.zkclient.exception.ZkTimeoutException: Unable to connect to zookeeper server within timeout: 6000
+	at org.I0Itec.zkclient.ZkClient.connect(ZkClient.java:1223)
+	at org.I0Itec.zkclient.ZkClient.<init>(ZkClient.java:155)
+	at org.I0Itec.zkclient.ZkClient.<init>(ZkClient.java:129)
+	at kafka.utils.ZkUtils$.createZkClientAndConnection(ZkUtils.scala:89)
+	at kafka.utils.ZkUtils$.apply(ZkUtils.scala:71)
+	at kafka.server.KafkaServer.initZk(KafkaServer.scala:278)
+	at kafka.server.KafkaServer.startup(KafkaServer.scala:168)
+	at kafka.server.KafkaServerStartable.startup(KafkaServerStartable.scala:37)
+	at kafka.Kafka$.main(Kafka.scala:67)
+	at kafka.Kafka.main(Kafka.scala)
+[2016-05-25 22:58:09,343] INFO shutting down (kafka.server.KafkaServer)
