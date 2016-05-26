@@ -15,7 +15,7 @@ if [ `ps ax | grep -v grep | grep -iq 'PcfMultiThreadConsumer'; echo $? == 0` ];
 	printf "\n\n###### Done\n"
 fi
 
-printf "\n\n###### Stopping Kafka Sercice...\n"
+printf "\n\n###### Stopping Kafka Service...\n"
 ${PCF_KAFKA_HOME}/bin/kafka-server-stop.sh
 sleep 8
 printf "\n\n###### Done\n"

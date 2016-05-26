@@ -38,11 +38,14 @@ source ../setenv.sh
 #----------------Customize Configuration---------------
 SEED="google"; 
 NUTCH_HOME=${PCF_NUTCH_HOME}/runtime/local; 
-RECIPIENTS=""; 
 #------------------------------------------------------
 
 sleep 5;
 date; 
 ${NUTCH_HOME}/bin/crawl ${PCF_SEEDS}/${SEED} ${PCF_CRAWLING_LIVE}/crawl-${SEED}-${SLURM_JOBID} 10;
+if [ ${PCF_KAFKA} == "ON" ]; then 
+	echo "Crawl completed for ${SEED}" | ${PCF_KAFKA_HOME}/bin/kafka-console-producer.sh --broker-list ${PCF_KAFKA_HOST}:9092 --topic notify;
+	echo crawl-${SEED}-${SLURM_JOBID} | ${PCF_KAFKA_HOME}/bin/kafka-console-producer.sh --broker-list ${PCF_KAFKA_HOST}:9092 --topic copy-segments;
+fi;
 wait;
 date;

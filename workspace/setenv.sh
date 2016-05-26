@@ -16,5 +16,6 @@ export PCF_LOGS="${PCF_WORKSPACE}/logs";
 export PCF_SEEDS="${PCF_WORKSPACE}/seeds";
 export PCF_KAFKA_HOME="${PCF_WORKSPACE}/kafka";
 export PCF_KAFKA_HOST="localhost";
+export PCF_KAFKA="OFF";
 
 printf "\n\n###### Done\n"
