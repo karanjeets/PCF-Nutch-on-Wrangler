@@ -1,10 +1,10 @@
-# Crawl - Evaluation
+# PCF - Nutch on Wrangler
 
-A crawl evaluation of Apache Nutch v1.12. We are running our crawls on [TACC Wrangler](https://www.tacc.utexas.edu/systems/wrangler), a supercomputer funded by NSF, in both Hadoop and Local mode thereby pushing the crawler to its limits for a best throughput.
+A Portable Crawling Framework (PCF) for [Apache Nutch 1.x](http://nutch.apache.org/) to run on [TACC Wrangler](https://www.tacc.utexas.edu/systems/wrangler), a supercomputer funded by NSF.
 
-We are evaluating Nutch on all kind of challenging stuff - Broad crawling, Focused crawling, Intelligent Crawling, Domain Discovery and many more...
+This came out from another project - "Crawl Evaluation" where we evaluated Apache Nutch v1.12 on Wrangler in both Hadoop and Local mode thereby pushing the crawler to its limits for a best throughput. It also includes some of the challenging stuff - Broad crawling, Focused crawling, Intelligent Crawling, Domain Discovery and many more...
 
-The project has a sample crawling workspace named Portable Crawling Framework (PCF) for Wrangler which is both automated and portable. More details can be found from the respective README files.
+This project has a sample crawling workspace named Portable Crawling Framework (PCF) for Wrangler which is both automated and portable. More details can be found from the respective README files.
 
 #### Quick Links
 
